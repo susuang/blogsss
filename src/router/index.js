@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/login'
+import {delCookie,getCookie} from '@/util/cookie'
 
 Vue.use(Router)
 
@@ -15,7 +16,8 @@ const router = new Router({
     {
     	path: '/home',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta:{requireAuth: true }
     },
     {
     	path: '/login', 
@@ -25,11 +27,13 @@ const router = new Router({
   ]
 });
 router.beforeEach((to, from, next)=> {
-	const nextRouter = ['HelloWorld'];
-	if(nextRouter.indexOf(to.name)>=0) {
-		next({ path: '/login' });
-	}else {
-		next();
+	if(to.meta.requireAuth) {
+		if(getCookie('session')) {
+			next();
+		}else {
+			next({ path: '/login' });
+		}
 	}
+	next();
 })
 export default router;
