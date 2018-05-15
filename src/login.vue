@@ -16,6 +16,7 @@
 </template>
 
 <script>
+/*import {mapGetters, mapMutations, mapActions} from 'vuex';*/
 export default {
   name: 'login',
   data () {
@@ -36,9 +37,10 @@ export default {
   		}
   		$(".loginBtn").button('loading');
       $(".enrollBtn").hide(500);
-      $.post(api + '/doLogin', loginForm, function(){
+      console.info(_self.$store.state);
+      /*$.post(api + '/doLogin', loginForm, function(){
       	
-      });
+      });*/
   	}
   }
 }
