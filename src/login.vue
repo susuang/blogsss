@@ -32,15 +32,21 @@ export default {
   	doLogin() {
   		const _self = this;
   		const loginForm = _self.loginForm;
+  		const api = _self.$store.state.api;
   		if(loginForm.userName == '' || loginForm.password == '') {
   			alert("用户名或密码不能为空！")
+  			return ;
   		}
   		$(".loginBtn").button('loading');
       $(".enrollBtn").hide(500);
-      console.info(_self.$store.state);
-      /*$.post(api + '/doLogin', loginForm, function(){
-      	
-      });*/
+      $.post(api + '/doLogin', loginForm, function(result){
+      	if(!result.success) {
+      		alert(result.msg);
+      		$(".loginBtn").button('reset');
+      		$(".enrollBtn").show(500);
+      		return ;
+      	}
+      });
   	}
   }
 }
