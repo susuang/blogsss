@@ -16,7 +16,8 @@
 </template>
 
 <script>
-/*import {mapGetters, mapMutations, mapActions} from 'vuex';*/
+import {mapGetters, mapMutations, mapActions} from 'vuex';
+import {getCookie, setCookie} from '@/util/cookie'
 export default {
   name: 'login',
   data () {
@@ -29,6 +30,9 @@ export default {
     }
   },
   methods: {
+  	...mapActions([
+      'updateUserInfo'
+    ]),
   	doLogin() {
   		const _self = this;
   		const loginForm = _self.loginForm;
@@ -45,6 +49,13 @@ export default {
       		$(".loginBtn").button('reset');
       		$(".enrollBtn").show(500);
       		return ;
+      	}else {
+      		setCookie("session", result.token, 2);
+      		_self.updateUserInfo({//修改vuex的值
+      			name:loginForm.userName,
+      			login:true
+      		});
+      		_self.$router.push('/home');
       	}
       });
   	}

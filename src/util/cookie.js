@@ -11,6 +11,7 @@ export function getCookie(name) {
 //设置cookie
 export function setCookie(c_name, value, expiredays) {
 	const exdate = new Date();
+	expiredays =  (expiredays || 1) * 24 * 60 * 60 * 1000;
 	exdate.setDate(exdate.getDate() + expiredays);
 	document.cookie = c_name + '=' + escape(value) + ((expiredays == null) ? "": ';expires='+exdate.toGMTString())
 }

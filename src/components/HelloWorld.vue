@@ -91,6 +91,7 @@
 		<input type="checkbox"> 选项 3
 	</label>
 </div>
+<h1>欢迎{{ userName }}</h1>
   </div>
 </template>
 
@@ -99,7 +100,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      userName: this.$store.state.userName
     }
   }
 }

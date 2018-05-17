@@ -8,7 +8,6 @@ import 'bootstrap/css/bootstrap.min.css'
 import 'bootstrap/js/bootstrap.min.js'
 
 Vue.config.productionTip = false
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
