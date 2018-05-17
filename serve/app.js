@@ -2,16 +2,13 @@
 /**
  * Module dependencies.
  */
+const express = require('express');
+const http = require('http');
+const path = require('path');
+const bodyParser = require('body-parser');
+const multer  = require('./models/Multer');//用法https://github.com/expressjs/multer
 
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-var bodyParser = require('body-parser');
-var multer  = require('./models/Multer');//用法https://github.com/expressjs/multer
-
-var app = express();
+const app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -42,29 +39,14 @@ app.all('*', function(req, res, next) {
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
 });
+//路径path
+const routes = require('./routes');
+const user = routes.user;
 app.get('/', routes.photos.photosList);
 app.get('/upload', routes.photos.upload);
 app.post('/upload', routes.photos.submit);
-app.get('/users', user.list);
-app.post('/doLogin',function(req,res){
-	const user = {
-		"admin":'123456'
-	};
-	const vUser = req.body;
-	var result = {};
-	if(!user.hasOwnProperty(vUser.userName)) {
-		result["success"] = false
-		result["msg"] = "不存在该用户!"
-	}else {
-		result["success"] = true
-		result["msg"] = "登入成功!"
-		if(user[vUser.userName] != vUser.password){
-			result["success"] = false
-			result["msg"] = "密码不正确!"
-		}
-	}
-	res.send(result);
-}) ;
+
+app.post('/doLogin',user.doLogin) ;
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

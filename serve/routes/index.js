@@ -1,4 +1,5 @@
-var photos = require('./photos');
+const photos = require('./photos');
+const user = require('./user');
 /*
  * GET home page.
  */
@@ -12,12 +13,4 @@ exports.index = function(req, res){
  */
 exports.photos = photos;
 
-/*
- * UPLOAD photo page.
- */
-/*exports.upload = photos.upload;*/
-/*exports.upload = function(req, res){
-    res.render('upload', { 
-        title: 'Photos up'
-    });
-};*/
+exports.user = user;
