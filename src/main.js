@@ -7,6 +7,9 @@ import store  from '@/store'
 import 'bootstrap/css/bootstrap.min.css'
 import 'bootstrap/js/bootstrap.min.js'
 
+import Toast  from '@/components/Prompts'
+Vue.use(Toast)
+
 Vue.config.productionTip = false
 new Vue({
   el: '#app',

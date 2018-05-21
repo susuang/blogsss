@@ -14,7 +14,7 @@ const router = new Router({
       redirect: '/home'   //重定向
     },
     {
-    	path: '/home',
+      path: '/home',
       name: 'HelloWorld',
       component: HelloWorld,
       meta:{requireAuth: true }

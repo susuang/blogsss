@@ -43,7 +43,8 @@ export default {
   		}
   		$(".loginBtn").button('loading');
       $(".enrollBtn").hide(500);
-      $.post(api + '/doLogin', loginForm, function(result){
+      this.$shiLoading.open();
+      /*$.post(api + '/doLogin', loginForm, function(result){
       	if(!result.success) {
       		alert(result.msg);
       		$(".loginBtn").button('reset');
@@ -57,7 +58,7 @@ export default {
       		});
       		_self.$router.push('/home');
       	}
-      });
+      });*/
   	}
   }
 }
