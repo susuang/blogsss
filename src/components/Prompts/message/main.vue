@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style type="text/css">
-  .shishan-loading {
+  .shishan-message {
     color: #45B0FF;
     position: fixed;
     top: 0;
@@ -24,7 +24,7 @@ export default {
     width: 100%;
     height: 100%;
   }
-  .shishan-loading .bg {
+  .shishan-message .bg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -32,7 +32,7 @@ export default {
     opacity: 0.7;
     z-index: 999;
   }
-  .shishan-loading .shishan-container {
+  .shishan-message .shishan-container {
     position: absolute;
     display: inline-block;
     top: 50%;

@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import {mapActions} from 'vuex';
 import {getCookie, setCookie} from '@/util/cookie'
 export default {
@@ -43,7 +44,10 @@ export default {
   		}
   		$(".loginBtn").button('loading');
       $(".enrollBtn").hide(500);
-      this.$shiLoading.open();
+      /*this.$shiLoading.open();*/
+     this.$shiMessage.error({
+     	msg:'错误'
+     });
       /*$.post(api + '/doLogin', loginForm, function(result){
       	if(!result.success) {
       		alert(result.msg);
