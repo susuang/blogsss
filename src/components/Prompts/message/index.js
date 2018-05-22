@@ -24,7 +24,7 @@ Vue.prototype.$shiMessage = (type, opt) => {
 					opt.callback()
 				}
 				if (doms.length > 0) {
-					console.info(this.$el)
+					document.body.removeChild(this.$el)
 				}
 			}
 		}

@@ -46,7 +46,10 @@ export default {
       $(".enrollBtn").hide(500);
       /*this.$shiLoading.open();*/
      this.$shiMessage.error({
-     	msg:'错误'
+     	msg:'错误',
+     	callback: function(){
+     		console.info(1);
+     	}
      });
       /*$.post(api + '/doLogin', loginForm, function(result){
       	if(!result.success) {
