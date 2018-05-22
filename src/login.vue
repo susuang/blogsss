@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {mapGetters, mapMutations, mapActions} from 'vuex';
+import {mapActions} from 'vuex';
 import {getCookie, setCookie} from '@/util/cookie'
 export default {
   name: 'login',

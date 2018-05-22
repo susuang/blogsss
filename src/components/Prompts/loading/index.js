@@ -14,7 +14,6 @@ Vue.prototype.$shiLoading = (type) => {
 	if(doms.length > 0){//当页面中已经存在则不执行
 		return ;
 	}
-	console.info(this);
 	document.body.appendChild(load.$el)	
 }
 

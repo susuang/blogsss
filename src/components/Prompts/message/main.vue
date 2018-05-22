@@ -1,24 +1,17 @@
 <template>
-  <div class="shishan-loading" :style="{'top': top, 'left': left, 'width': width, 'height': height}">
+  <div class="shishan-message">
   	<div class="bg"></div>
   	<div class="shishan-container">
-      <i class="fa fa-spinner fa-pulse fa-4x"></i>
+      <i class="fa fa-check-circle-o fa-4x"></i>
+      <span>{{ msg }}</span>
+      <button @click='okFunc()'>{{ btnText }}</button>
     </div>
   </div>
 </template>
 
 <script>
-import '../icon/css/font-awesome.min.css'
 export default {
-  name: 'shishan-loading',
-   data () {
-    return {
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%'
-    }
-  }
+  name: 'shishan-message'
 }
 </script>
 
