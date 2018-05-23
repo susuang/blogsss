@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/home'
 import Login from '@/login'
 import {delCookie,getCookie} from '@/util/cookie'
 
@@ -15,9 +15,8 @@ const router = new Router({
     },
     {
       path: '/home',
-      name: 'HelloWorld',
-      component: HelloWorld,
-      meta:{requireAuth: true }
+      name: 'Home',
+      component: Home
     },
     {
     	path: '/login', 
