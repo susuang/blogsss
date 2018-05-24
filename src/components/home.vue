@@ -8,6 +8,7 @@
   			<a>学无止境</a>
   			<a>关于我</a>
   		</nav>
+  		<img class="logo-home" src="../assets/bog-logo.png" />
   	</header>
   </div>
 </template>
@@ -27,16 +28,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .home {
+	margin: 0 auto;
 	height: 100%;
-	widows: 100%;
-	background: #dbe0e6;
+	width: 100%;
+	max-width: 980px;
+	background: #fafcfe url(../assets/blog-bg.png) no-repeat;
+	background-size: 100%;
+	background-position-y: 100px;
 }
-header {position: relative;margin: 0 auto;height:150px;background: #fafcfe;text-align: left;}
+header {position: relative;height:130px;text-align: left;}
 .blog-text {
 	position: absolute;
 	top: 20%;
   left: 10%;
-	width: 40%;
+	width: 25%;
+}
+.logo-home {
+	position: absolute;
+	top: 6%;
+  right: 2%;
+	width: 15%;
 }
 nav {
 	position: absolute;
