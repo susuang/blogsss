@@ -76,6 +76,7 @@ export default {
 	.login {
 		width: 100%;
 		height: 100%;
+		margin-top: 30px;
   }
   .logo {color: #53538f;}
 	.content {margin:0 auto;background: #e2e2f6;width: 50%;;max-width: 500px;padding: 30px;

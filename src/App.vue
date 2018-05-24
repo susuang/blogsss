@@ -20,6 +20,5 @@ html,body {padding: 0; margin: 0;widows: 100%;height: 100%;overflow: hidden;}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 30px;
 }
 </style>
